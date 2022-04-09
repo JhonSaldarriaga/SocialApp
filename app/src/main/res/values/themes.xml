@@ -17,7 +17,6 @@
     <style name="loginButton" parent="Widget.AppCompat.Button">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginBottom">48dp</item>
         <item name="android:backgroundTint">@color/blue</item>
         <item name="android:fontFamily">@font/roboto_bold</item>
         <item name="android:text">@string/login_button</item>
@@ -26,23 +25,30 @@
     </style>
 
     <style name="filledBlueButton" parent="Widget.AppCompat.Button">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
         <item name="android:backgroundTint">@color/blue</item>
         <item name="android:fontFamily">@font/roboto_bold</item>
         <item name="android:textColor">@color/white</item>
     </style>
 
     <style name="filledWhiteButton" parent="Widget.AppCompat.Button">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
         <item name="android:backgroundTint">@color/white</item>
         <item name="android:fontFamily">@font/roboto_bold</item>
         <item name="android:textColor">@color/blue</item>
     </style>
 
     <style name="profileNameText" parent="Widget.AppCompat.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">32dp</item>
         <item name="android:textSize">34sp</item>
         <item name="android:fontFamily">@font/roboto</item>
         <item name="android:textColor">@color/black_40</item>
     </style>
-    
+
     <style name="rightCustomButton" parent="Widget.AppCompat.Button">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
@@ -77,6 +83,38 @@
         <item name="android:elevation">100dp</item>
         <item name="android:padding">10dp</item>
         <item name="android:layout_gravity">right</item>
+    </style>
+
+    <style name="postEditText" parent="Widget.AppCompat.EditText">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">16dp</item>
+        <item name="android:layout_marginEnd">16dp</item>
+        <item name="android:background">@null</item>
+        <item name="android:ems">10</item>
+        <item name="android:fontFamily">@font/roboto</item>
+        <item name="android:hint">@string/new_post_et_hint</item>
+        <item name="android:inputType">textMultiLine</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:textColorHint">@color/gray_170</item>
+    </style>
+
+    <style name="postDate" parent="Widget.AppCompat.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginEnd">16dp</item>
+        <item name="android:fontFamily">@font/roboto_medium</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="postProfileNameText" parent="Widget.AppCompat.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">8dp</item>
+        <item name="android:fontFamily">@font/roboto</item>
+        <item name="android:textColor">@color/black_40</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
 </resources>
