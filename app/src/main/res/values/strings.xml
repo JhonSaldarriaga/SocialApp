@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">SocialApp</string>
+    <string name="user_menu_item_home">home</string>
+    <string name="user_menu_item_post">new post</string>
+    <string name="user_menu_item_profile">profile</string>
+    <string name="login_email_hint">Phone or email</string>
+    <string name="login_password_hint">Password</string>
+    <string name="login_button">Log in</string>
+    <string name="login_forgot_password">Forgot Password?</string>
+    <string name="user_profile_edit_button">Edit profile</string>
+    <string name="user_profile_logout_button">Log out</string>
+    <string name="new_post_et_hint">Post an update</string>
+    <string name="new_post_add_image_button_gallery">IMAGE</string>
+    <string name="new_post_add_image_button_camera">CAMERA</string>
+    <string name="new_post_post_button">POST</string>
 </resources>
