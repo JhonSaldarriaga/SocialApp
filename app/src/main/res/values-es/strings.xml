@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">SocialApp</string>
+    <string name="user_menu_item_home">hogar</string>
+    <string name="user_menu_item_post">publicar</string>
+    <string name="user_menu_item_profile">perfil</string>
+    <string name="login_email_hint">Número o correo</string>
+    <string name="login_password_hint">Contraseña</string>
+    <string name="login_button">Iniciar sesión</string>
+    <string name="login_forgot_password">¿Olvidaste tu contraseña?</string>
+    <string name="user_profile_edit_button">Editar perfil</string>
+    <string name="user_profile_logout_button">Cerrar sesión</string>
+    <string name="new_post_et_hint">Publica una actualización</string>
+    <string name="new_post_add_image_button_gallery">IMAGEN</string>
+    <string name="new_post_add_image_button_camera">CAMARA</string>
+    <string name="new_post_post_button">PUBLICAR</string>
+</resources>
