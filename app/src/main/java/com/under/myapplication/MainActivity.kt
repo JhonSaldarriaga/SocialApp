@@ -1,11 +1,14 @@
 package com.under.myapplication
 
+import android.Manifest
 import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.ContactsContract
 import android.util.Log
+import android.widget.Toast
 import com.google.gson.Gson
 import com.under.myapplication.databinding.ActivityMainBinding
 import com.under.myapplication.model.DataBase
@@ -21,11 +24,36 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+        requestPermissions(arrayOf(
+            Manifest.permission.CAMERA,
+            Manifest.permission.READ_EXTERNAL_STORAGE),1)
         loadData()
         if(DataBase.isOnSession()){
             startActivity(Intent(this, UserActivity::class.java))
         }else{
             startActivity(Intent(this, LoginActivity::class.java))
+        }
+    }
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        var allGrant = true
+        for(result in grantResults){
+            if(result == PackageManager.PERMISSION_DENIED) allGrant = false
+        }
+        if(allGrant){
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        }else{
+            Toast.makeText(
+                this,
+                "Tienes que aceptar todos los permisos antes de continuar",
+                Toast.LENGTH_SHORT).show()
         }
     }
 

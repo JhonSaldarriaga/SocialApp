@@ -8,6 +8,7 @@
     <string name="login_button">Log in</string>
     <string name="login_forgot_password">Forgot Password?</string>
     <string name="login_invalid">Invalid email or password</string>
+    <string name="edit_user_name_invalid">Invalid name</string>
     <string name="user_profile_edit_button">Edit profile</string>
     <string name="user_profile_logout_button">Log out</string>
     <string name="user_edit_profile_apply_button">Apply</string>

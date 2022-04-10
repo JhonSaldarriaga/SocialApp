@@ -8,6 +8,7 @@
     <string name="login_button">Iniciar sesión</string>
     <string name="login_forgot_password">¿Olvidaste tu contraseña?</string>
     <string name="login_invalid">Correo o contraseña invalidos</string>
+    <string name="edit_user_name_invalid">Nombre invalido</string>
     <string name="user_profile_edit_button">Editar perfil</string>
     <string name="user_profile_logout_button">Cerrar sesión</string>
     <string name="user_edit_profile_apply_button">Aplicar</string>

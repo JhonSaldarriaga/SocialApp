@@ -5,6 +5,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.activity.result.ActivityResult
+import androidx.activity.result.contract.ActivityResultContracts.StartActivityForResult
 import androidx.fragment.app.Fragment
 import com.google.gson.Gson
 import com.under.myapplication.databinding.ActivityUserBinding
@@ -12,13 +14,18 @@ import com.under.myapplication.model.DataBase
 import com.under.myapplication.model.State
 import java.io.File
 
-class UserActivity : AppCompatActivity(), ProfileFragment.OnLogoutListener {
+class UserActivity : AppCompatActivity(),
+    ProfileFragment.ProfileListener,
+    EditProfileFragment.EditProfileListener{
+
+    private val binding: ActivityUserBinding by lazy { ActivityUserBinding.inflate(layoutInflater) }
 
     private lateinit var postFragment: NewPostFragment
     private lateinit var homeFragment: HomeFragment
     private lateinit var profileFragment: ProfileFragment
+    private var dialogEditProfile = EditProfileFragment()
 
-    private val binding: ActivityUserBinding by lazy { ActivityUserBinding.inflate(layoutInflater) }
+    private val galleryLauncherTemp = registerForActivityResult(StartActivityForResult(),::onGalleryTempResult)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,7 +34,8 @@ class UserActivity : AppCompatActivity(), ProfileFragment.OnLogoutListener {
         postFragment = NewPostFragment.newInstance()
         homeFragment = HomeFragment.newInstance()
         profileFragment = ProfileFragment.newInstance()
-        profileFragment.logoutListener = this
+        profileFragment.profileListener = this
+        dialogEditProfile.editProfileListener = this
         showFragment(homeFragment) // Default fragment
 
         binding.bottomNavigationView.setOnItemSelectedListener { menuItem ->
@@ -52,6 +60,30 @@ class UserActivity : AppCompatActivity(), ProfileFragment.OnLogoutListener {
         startActivity(Intent(this, LoginActivity::class.java))
     }
 
+    override fun onEditProfileListener() {
+        dialogEditProfile.show(supportFragmentManager,"editProfile")
+    }
+
+    override fun onChangeProfilePicListener() {
+        val intent = Intent(Intent.ACTION_GET_CONTENT)
+        intent.type= "image/*"
+        galleryLauncherTemp.launch(intent)
+    }
+
+    private fun onGalleryTempResult(result: ActivityResult){
+        if(result.resultCode==RESULT_OK){
+            val uriImage = result.data?.data
+            Log.e(">>>","${uriImage}")
+            Log.e(">>>","${UtilDomi.getPath(this,uriImage!!)!!.toString()}")
+            dialogEditProfile.tempPath = UtilDomi.getPath(this,uriImage!!)!!.toString()
+            dialogEditProfile.onImageCharge()
+        }
+    }
+
+    override fun onEditUserValuesApplyListener() {
+        serialize()
+        profileFragment.updateInfo()
+    }
     //----------------------------------------------------------------------------------------------
     override fun onBackPressed() {}
 
@@ -70,10 +102,10 @@ class UserActivity : AppCompatActivity(), ProfileFragment.OnLogoutListener {
         super.onResume()
     }
 
-    override fun onPause() {
-        super.onPause()
+    private fun serialize() {
         //Serializacion
         val json = Gson().toJson(State(DataBase.getUsers(),DataBase.getPost(),DataBase.getSession()))
+        Log.e(">>>","serialize: ${json.toString()}")
         //Shared Preferences
         val sharedPref = getSharedPreferences("Preference",Context.MODE_PRIVATE)
         sharedPref.edit().putString("state",json).apply()

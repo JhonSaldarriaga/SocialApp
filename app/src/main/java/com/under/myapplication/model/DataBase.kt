@@ -42,6 +42,8 @@ object DataBase {
     fun changeProfilePic(userId:String, path:String){
         if(getUserByID(userId)!=null){
             getUserByID(userId)?.setImageProfilePath(path)
+        }else{
+            Log.e(">>>","userId not found")
         }
     }
     fun changeProfileName(userId:String, name:String){
