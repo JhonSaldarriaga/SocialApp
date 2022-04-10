@@ -12,6 +12,8 @@
     <color name="red_255">#FF0000</color>
     <color name="black_40">#282828</color>
     <color name="blue">#3EA6FF</color>
+    <color name="blue_bold">#3B5998</color>
     <color name="gray_187">#bbbbbb</color>
     <color name="gray_170">#aaaaaa</color>
+
 </resources>
