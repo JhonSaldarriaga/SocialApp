@@ -98,12 +98,22 @@
         <item name="android:minHeight">48dp</item>
         <item name="android:padding">10dp</item>
         <item name="android:textColorHint">@color/gray_170</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="postLocation" parent="Widget.AppCompat.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginEnd">16dp</item>
+        <item name="android:fontFamily">@font/roboto_medium</item>
+        <item name="android:textSize">12sp</item>
     </style>
 
     <style name="postDate" parent="Widget.AppCompat.TextView">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginEnd">16dp</item>
+        <item name="android:layout_marginTop">16dp</item>
         <item name="android:fontFamily">@font/roboto_medium</item>
         <item name="android:textSize">12sp</item>
     </style>
@@ -128,5 +138,42 @@
         <item name="android:layout_height">48dp</item>
         <item name="android:layout_marginStart">16dp</item>
         <item name="android:layout_marginTop">16dp</item>
+    </style>
+    
+    <style name="newPostCloseIcon">
+        <item name="android:src">@drawable/ic_baseline_close_24</item>
+        <item name="android:layout_width">48dp</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:layout_marginTop">16dp</item>
+        <item name="android:layout_marginEnd">16dp</item>
+        <item name="android:visibility">gone</item>
+    </style>
+
+    <style name="newPostAddImageView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:scaleType">centerCrop</item>
+        <item name="android:visibility">gone</item>
+    </style>
+
+    <style name="postImageView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:scaleType">centerCrop</item>
+        <item name="android:layout_marginStart">8dp</item>
+        <item name="android:layout_marginEnd">8dp</item>
+        <item name="android:layout_marginBottom">16dp</item>
+    </style>
+
+    <style name="postTextView">
+        <item name="android:layout_width">350dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:layout_marginBottom">8dp</item>
+        <item name="android:paddingLeft">5dp</item>
     </style>
 </resources>
