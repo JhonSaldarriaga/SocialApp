@@ -211,6 +211,23 @@
         <item name="android:background">@color/white</item>
     </style>
 
+    <style name="bannerAppIcon">
+        <item name="android:layout_width">84dp</item>
+        <item name="android:layout_height">84dp</item>
+        <item name="android:layout_marginTop">0dp</item>
+        <item name="android:layout_marginStart">8dp</item>
+        <item name="android:src">@drawable/ic_mainicon_white</item>
+    </style>
+
+    <style name="bannerAppIconTextView" parent="Widget.AppCompat.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/roboto_bold</item>
+        <item name="android:text">@string/app_name</item>
+        <item name="android:textColor">@color/blue_bold</item>
+        <item name="android:textSize">34sp</item>
+    </style>
+
     <style name="layoutStyle">
         <item name="android:background">@color/white</item>
     </style>
