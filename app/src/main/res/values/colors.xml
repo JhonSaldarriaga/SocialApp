@@ -16,5 +16,7 @@
     <color name="blue_bold">#3B5998</color>
     <color name="gray_187">#bbbbbb</color>
     <color name="gray_170">#aaaaaa</color>
+    <color name="white_default">#fafafa</color>
+    <color name="black_default">#303030</color>
 
 </resources>

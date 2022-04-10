@@ -5,11 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.under.myapplication.databinding.FragmentHomeBinding
+import com.under.myapplication.databinding.FragmentNewPostBinding
 
-class HomeFragment : Fragment() {
+class NewPostFragment : Fragment() {
 
-    private var _binding: FragmentHomeBinding? = null
+    private var _binding: FragmentNewPostBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -17,7 +17,7 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        _binding = FragmentHomeBinding.inflate(inflater,container,false)
+        _binding = FragmentNewPostBinding.inflate(inflater,container,false)
         return binding.root
     }
 
@@ -28,6 +28,6 @@ class HomeFragment : Fragment() {
 
     companion object {
         @JvmStatic
-        fun newInstance() = HomeFragment()
+        fun newInstance() = NewPostFragment()
     }
 }
