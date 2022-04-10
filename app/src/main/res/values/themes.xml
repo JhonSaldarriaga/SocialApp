@@ -187,4 +187,8 @@
         <item name="android:text">@string/login_forgot_password</item>
         <item name="android:textColor">@color/blue_bold</item>
     </style>
+
+    <style name="layoutStyle">
+        <item name="android:background">@color/white</item>
+    </style>
 </resources>

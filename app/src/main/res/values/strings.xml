@@ -13,4 +13,5 @@
     <string name="new_post_add_image_button_gallery">IMAGE</string>
     <string name="new_post_add_image_button_camera">CAMERA</string>
     <string name="new_post_post_button">POST</string>
+    <string name="new_post_select_location">Select your location: </string>
 </resources>
