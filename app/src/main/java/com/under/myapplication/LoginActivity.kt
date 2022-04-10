@@ -37,6 +37,9 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
+    //----------------------------------------------------------------------------------------------
+    override fun onBackPressed() {}
+
     override fun onPause() {
         super.onPause()
         //Serializacion
@@ -55,7 +58,7 @@ class LoginActivity : AppCompatActivity() {
         //Shared Preferences
         val sharedPref = getSharedPreferences("Preference", Context.MODE_PRIVATE)
         val json = sharedPref.getString("state","NO_STATE")
-        Log.e(">>>","onResumeMainActivity: ${json.toString()}")
+        Log.e(">>>","onResumeLoginActivity: ${json.toString()}")
         if(json != "NO_STATE"){
             //Deserializacion
             val jsonDes = Gson().fromJson(json, State::class.java)
