@@ -188,6 +188,16 @@
         <item name="android:textColor">@color/blue_bold</item>
     </style>
 
+    <style name="newPostSelectLocation" parent="Widget.AppCompat.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginEnd">16dp</item>
+        <item name="android:fontFamily">@font/roboto_medium</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/black_54</item>
+        <item name="android:text">@string/new_post_select_location</item>
+    </style>
+
     <style name="layoutStyle">
         <item name="android:background">@color/white</item>
     </style>

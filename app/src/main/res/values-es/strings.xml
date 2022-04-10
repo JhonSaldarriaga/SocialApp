@@ -13,5 +13,5 @@
     <string name="new_post_add_image_button_gallery">IMAGEN</string>
     <string name="new_post_add_image_button_camera">CAMARA</string>
     <string name="new_post_post_button">PUBLICAR</string>
-    <string name="new_post_select_location">Selecciona tu ubicación: </string>
+    <string name="new_post_select_location">Selecciona tu ubicación:</string>
 </resources>
