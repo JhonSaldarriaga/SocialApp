@@ -9,11 +9,10 @@
     <string name="login_forgot_password">Forgot Password?</string>
     <string name="user_profile_edit_button">Edit profile</string>
     <string name="user_profile_logout_button">Log out</string>
+    <string name="user_edit_profile_apply_button">Apply</string>
     <string name="new_post_et_hint">Post an update</string>
     <string name="new_post_add_image_button_gallery">IMAGE</string>
     <string name="new_post_add_image_button_camera">CAMERA</string>
     <string name="new_post_post_button">POST</string>
     <string name="new_post_select_location">Select your location:</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

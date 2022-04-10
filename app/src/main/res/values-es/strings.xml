@@ -9,6 +9,7 @@
     <string name="login_forgot_password">¿Olvidaste tu contraseña?</string>
     <string name="user_profile_edit_button">Editar perfil</string>
     <string name="user_profile_logout_button">Cerrar sesión</string>
+    <string name="user_edit_profile_apply_button">Aplicar</string>
     <string name="new_post_et_hint">Publica una actualización</string>
     <string name="new_post_add_image_button_gallery">IMAGEN</string>
     <string name="new_post_add_image_button_camera">CAMARA</string>
