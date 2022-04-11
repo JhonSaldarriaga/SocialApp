@@ -39,25 +39,25 @@ object DataBase {
     fun isOnSession():Boolean{return session!=null}
 
     //PROFILE
-    fun changeProfilePic(userId:String, path:String){
-        if(getUserByID(userId)!=null){
-            getUserByID(userId)?.setImageProfilePath(path)
+    fun changeProfilePic(path:String){
+        if(getUserByID(session!!.userID)!=null){
+            getUserByID(session!!.userID)?.setImageProfilePath(path)
         }else{
             Log.e(">>>","userId not found")
         }
     }
-    fun changeProfileName(userId:String, name:String){
-        if(getUserByID(userId)!=null){
-            getUserByID(userId)?.setName(name)
+    fun changeProfileName(name:String){
+        if(getUserByID(session!!.userID)!=null){
+            getUserByID(session!!.userID)?.setName(name)
         }
     }
 
     //POST
-    fun addPost(updateText:String, location:String, date:String, userId:String){
-        posts.add(Post(updateText,location,date,userId))
+    fun addPost(updateText:String, location:String, date:String){
+        posts.add(Post(updateText,location,date, session!!.userID))
     }
-    fun addPost(updateText:String, location:String, date:String, userId:String, uip:String){
-        val p = Post(updateText,location,date,userId)
+    fun addPost(updateText:String, location:String, date:String, uip:String){
+        val p = Post(updateText,location,date,session!!.userID)
         p.updateImagePath = uip
         posts.add(p)
     }

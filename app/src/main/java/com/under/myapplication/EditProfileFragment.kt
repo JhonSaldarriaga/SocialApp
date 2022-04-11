@@ -50,10 +50,10 @@ class EditProfileFragment : DialogFragment() {
 
         binding.editProfileApplyBTN.setOnClickListener {
             if (tempPath != null){
-                DataBase.changeProfilePic(DataBase.getSession()!!.userID,tempPath!!)
+                DataBase.changeProfilePic(tempPath!!)
             }
             if(binding.editProfileNameET.text.toString()!=""){
-                DataBase.changeProfileName(DataBase.getSession()!!.userID,binding.editProfileNameET.text.toString())
+                DataBase.changeProfileName(binding.editProfileNameET.text.toString())
             }
             editProfileListener?.onEditUserValuesApplyListener()
             binding.editProfileNameET.setText("")

@@ -44,8 +44,14 @@ class NewPostFragment : Fragment() {
 
         binding.newPostFragmenCamBTN.setOnClickListener {newPostListener?.onCameraButtonListener()}
         binding.newPostFragmentAddImageBTN.setOnClickListener {newPostListener?.onImageButtonListener()}
-        binding.postBTN.setOnClickListener {  }
+        binding.postBTN.setOnClickListener {
+            val text = binding.newPostFragmentUpdateET.text.toString()
+            if(tempPath!=null){
+                //DataBase.addPost()
+            }else{
 
+            }
+        }
         return binding.root
     }
 
