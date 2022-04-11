@@ -5,54 +5,66 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/postRowDate"
-        style="@style/postDateTextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="9/04/2022" />
-
-    <TextView
-        android:id="@+id/postRowLocation"
-        style="@style/postLocationTextView"
-        app:layout_constraintStart_toStartOf="@+id/postRowProfileName"
-        app:layout_constraintTop_toBottomOf="@+id/postRowProfileName"
-        tools:text="Cali/Valle" />
-
-    <ImageView
-        android:id="@+id/postRowImage"
-        style="@style/postImageView"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/postTextView"
-        tools:ignore="ContentDescription"
-        tools:srcCompat="@drawable/paisaje_example" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/postRowProfilePic"
-        style="@style/postProfileImageView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="ImageContrastCheck"
-        tools:src="@tools:sample/avatars" />
 
-    <TextView
-        android:id="@+id/postRowProfileName"
-        style="@style/postProfileNameTextView"
-        app:layout_constraintBottom_toBottomOf="@+id/postRowProfilePic"
-        app:layout_constraintStart_toEndOf="@+id/postRowProfilePic"
-        app:layout_constraintTop_toTopOf="@+id/postRowProfilePic"
-        tools:text="Jhon Saldarriaga" />
+        <TextView
+            android:id="@+id/postRowDate"
+            style="@style/postDateTextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="9/04/2022" />
 
-    <TextView
-        android:id="@+id/postTextView"
-        style="@style/postTextView"
-        app:layout_constraintBottom_toTopOf="@+id/postRowImage"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/postRowProfilePic"
-        tools:text="Est feugiat himenaeos quam proin tellus rhoncus euismod volutpat, lectus nullam hendrerit diam morbi praesent ac risus, ultricies vestibulum quisque lobortis iaculis vel interdum. Porta montes nisl mi ligula lobortis euismod, ullamcorper curabitur vulputate non nunc. Vehicula varius penatibus quis purus facilisi cras conubia interdum duis sapien cubilia, quam phasellus nisl at etiam eleifend nullam turpis ac." />
+        <TextView
+            android:id="@+id/postRowLocation"
+            style="@style/postLocationTextView"
+            app:layout_constraintStart_toStartOf="@+id/postRowProfileName"
+            app:layout_constraintTop_toBottomOf="@+id/postRowProfileName"
+            tools:text="Cali/Valle" />
+
+        <ImageView
+            android:id="@+id/postRowImage"
+            style="@style/postImageView"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/postTextView"
+            tools:ignore="ContentDescription"
+            tools:srcCompat="@drawable/paisaje_example" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/postRowProfilePic"
+            style="@style/postProfileImageView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ImageContrastCheck"
+            tools:src="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/postRowProfileName"
+            style="@style/postProfileNameTextView"
+            app:layout_constraintBottom_toBottomOf="@+id/postRowProfilePic"
+            app:layout_constraintStart_toEndOf="@+id/postRowProfilePic"
+            app:layout_constraintTop_toTopOf="@+id/postRowProfilePic"
+            tools:text="Jhon Saldarriaga" />
+
+        <TextView
+            android:id="@+id/postTextView"
+            style="@style/postTextView"
+            app:layout_constraintBottom_toTopOf="@+id/postRowImage"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/postRowProfilePic"
+            tools:text="Est feugiat himenaeos quam proin tellus rhoncus euismod volutpat, lectus nullam hendrerit diam morbi praesent ac risus, ultricies vestibulum quisque lobortis iaculis vel interdum. Porta montes nisl mi ligula lobortis euismod, ullamcorper curabitur vulputate non nunc. Vehicula varius penatibus quis purus facilisi cras conubia interdum duis sapien cubilia, quam phasellus nisl at etiam eleifend nullam turpis ac." />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

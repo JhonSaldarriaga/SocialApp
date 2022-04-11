@@ -30,6 +30,7 @@ class PostAdapter: RecyclerView.Adapter<PostViewHolder>() {
         else{holder.profilePic.setImageURI(Uri.fromFile(File(postN.getProfilePic())))}
         holder.updateText.text = postN.updateText
         if(postN.haveImage()){
+            Log.e(">>>",postN.updateImagePath!!)
             holder.updateImage.visibility = View.VISIBLE
             holder.updateImage.setImageURI(Uri.fromFile(File(postN.updateImagePath)))
         }else{

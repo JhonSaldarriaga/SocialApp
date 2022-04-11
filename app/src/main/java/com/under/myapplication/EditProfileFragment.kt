@@ -55,7 +55,12 @@ class EditProfileFragment : DialogFragment() {
                 }
                 DataBase.changeProfileName(binding.editProfileNameET.text.toString())
                 editProfileListener?.onEditUserValuesApplyListener()
-            }else
+            }else{
+                if (tempPath != null){
+                    DataBase.changeProfilePic(tempPath!!)
+                }
+                editProfileListener?.onEditUserValuesApplyListener()
+            }
             binding.editProfileNameET.setText("")
             dismiss()
         }
