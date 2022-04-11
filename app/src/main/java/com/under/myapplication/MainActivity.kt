@@ -27,12 +27,6 @@ class MainActivity : AppCompatActivity() {
         requestPermissions(arrayOf(
             Manifest.permission.CAMERA,
             Manifest.permission.READ_EXTERNAL_STORAGE),1)
-        loadData()
-        if(DataBase.isOnSession()){
-            startActivity(Intent(this, UserActivity::class.java))
-        }else{
-            startActivity(Intent(this, LoginActivity::class.java))
-        }
     }
 
     override fun onRequestPermissionsResult(
@@ -46,8 +40,12 @@ class MainActivity : AppCompatActivity() {
             if(result == PackageManager.PERMISSION_DENIED) allGrant = false
         }
         if(allGrant){
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
+            loadData()
+            if(DataBase.isOnSession()){
+                startActivity(Intent(this, UserActivity::class.java))
+            }else{
+                startActivity(Intent(this, LoginActivity::class.java))
+            }
             finish()
         }else{
             Toast.makeText(

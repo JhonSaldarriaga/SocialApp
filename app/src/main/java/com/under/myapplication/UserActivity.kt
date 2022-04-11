@@ -16,6 +16,7 @@ import com.under.myapplication.databinding.ActivityUserBinding
 import com.under.myapplication.model.DataBase
 import com.under.myapplication.model.State
 import java.io.File
+import java.util.*
 
 class UserActivity : AppCompatActivity(),
     ProfileFragment.ProfileListener,
@@ -24,8 +25,8 @@ class UserActivity : AppCompatActivity(),
 
     private val binding: ActivityUserBinding by lazy { ActivityUserBinding.inflate(layoutInflater) }
 
-    private lateinit var postFragment: NewPostFragment
     private lateinit var homeFragment: HomeFragment
+    private lateinit var postFragment: NewPostFragment
     private lateinit var profileFragment: ProfileFragment
     private var dialogEditProfile = EditProfileFragment()
 
@@ -33,7 +34,6 @@ class UserActivity : AppCompatActivity(),
     private val galleryLauncherNewPost = registerForActivityResult(StartActivityForResult(),::onGalleryResultNewPost)
     private val galleryLauncherNewPostCamera = registerForActivityResult(StartActivityForResult(),::onGalleryResultNewPostCamera)
     private var tempFile: File? = null
-    private var numberFile: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -104,7 +104,7 @@ class UserActivity : AppCompatActivity(),
 
     override fun onCameraButtonListener() {
         val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-        tempFile = File("${getExternalFilesDir(null)}/photo${numberFile}.png")
+        tempFile = File("${getExternalFilesDir(null)}/photo${UUID.randomUUID().toString()}.png")
         val uri = FileProvider.getUriForFile(this,packageName, tempFile!!)
         intent.putExtra(MediaStore.EXTRA_OUTPUT,uri)
         galleryLauncherNewPostCamera.launch(intent)
@@ -126,7 +126,6 @@ class UserActivity : AppCompatActivity(),
 
     private fun onGalleryResultNewPostCamera(result: ActivityResult){
         if(result.resultCode==RESULT_OK){
-            numberFile++
             val path = tempFile?.path
             postFragment.tempPath = path
             postFragment.setImageUpdateListener()

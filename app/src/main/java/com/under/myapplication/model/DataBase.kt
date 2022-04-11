@@ -17,8 +17,10 @@ object DataBase {
     private var session: Session? = null
 
     init {
-        users["alfa@gmail.com"] = User("alfa@gmail.com","aplicacionesmoviles","Jhon Saldarriaga","")
-        users["beta@gmail.com"] = User("beta@gmail.com","aplicacionesmoviles","Alejandro Magno","")
+        val alfa = User("alfa@gmail.com","aplicacionesmoviles","Jhon Saldarriaga","")
+        val beta = User("beta@gmail.com","aplicacionesmoviles","Alejandro Magno","")
+        users["alfa@gmail.com"] = alfa
+        users["beta@gmail.com"] = beta
     }
 
     fun getUserByID(id:String):User?{
