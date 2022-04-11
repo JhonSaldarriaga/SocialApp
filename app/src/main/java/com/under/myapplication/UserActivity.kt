@@ -89,7 +89,7 @@ class UserActivity : AppCompatActivity(),
     private fun onGalleryTempResult(result: ActivityResult){
         if(result.resultCode==RESULT_OK){
             val uriImage = result.data?.data
-            Log.e(">>>","${uriImage}")
+            Log.e(">>>","$uriImage obtenido en editProfile")
             Log.e(">>>","${UtilDomi.getPath(this,uriImage!!)!!.toString()}")
             dialogEditProfile.tempPath = UtilDomi.getPath(this,uriImage!!)!!.toString()
             dialogEditProfile.onImageCharge()

@@ -26,7 +26,8 @@ class PostAdapter: RecyclerView.Adapter<PostViewHolder>() {
         holder.date.text = postN.date
         holder.location.text = postN.location
         holder.profileName.text = postN.getProfileName()
-        holder.profilePic.setImageURI(Uri.fromFile(File(postN.getProfilePic())))
+        if(postN.getProfilePic() == ""){holder.profilePic.setImageResource(R.drawable.default_profile_pic)}
+        else{holder.profilePic.setImageURI(Uri.fromFile(File(postN.getProfilePic())))}
         holder.updateText.text = postN.updateText
         if(postN.haveImage()){
             holder.updateImage.visibility = View.VISIBLE

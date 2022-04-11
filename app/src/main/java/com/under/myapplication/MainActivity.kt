@@ -26,7 +26,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         requestPermissions(arrayOf(
             Manifest.permission.CAMERA,
-            Manifest.permission.READ_EXTERNAL_STORAGE),1)
+            Manifest.permission.READ_EXTERNAL_STORAGE,
+            Manifest.permission.WRITE_EXTERNAL_STORAGE),1)
     }
 
     override fun onRequestPermissionsResult(
