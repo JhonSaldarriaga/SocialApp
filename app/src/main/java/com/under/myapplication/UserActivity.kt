@@ -4,9 +4,12 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.MediaStore
 import android.util.Log
+import android.widget.Toast
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts.StartActivityForResult
+import androidx.core.content.FileProvider
 import androidx.fragment.app.Fragment
 import com.google.gson.Gson
 import com.under.myapplication.databinding.ActivityUserBinding
@@ -28,6 +31,9 @@ class UserActivity : AppCompatActivity(),
 
     private val galleryLauncherTemp = registerForActivityResult(StartActivityForResult(),::onGalleryTempResult)
     private val galleryLauncherNewPost = registerForActivityResult(StartActivityForResult(),::onGalleryResultNewPost)
+    private val galleryLauncherNewPostCamera = registerForActivityResult(StartActivityForResult(),::onGalleryResultNewPostCamera)
+    private var tempFile: File? = null
+    private var numberFile: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -97,7 +103,11 @@ class UserActivity : AppCompatActivity(),
     }
 
     override fun onCameraButtonListener() {
-        TODO("Not yet implemented")
+        val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+        tempFile = File("${getExternalFilesDir(null)}/photo${numberFile}.png")
+        val uri = FileProvider.getUriForFile(this,packageName, tempFile!!)
+        intent.putExtra(MediaStore.EXTRA_OUTPUT,uri)
+        galleryLauncherNewPostCamera.launch(intent)
     }
 
     override fun onPostListener() {
@@ -114,6 +124,16 @@ class UserActivity : AppCompatActivity(),
         }
     }
 
+    private fun onGalleryResultNewPostCamera(result: ActivityResult){
+        if(result.resultCode==RESULT_OK){
+            numberFile++
+            val path = tempFile?.path
+            postFragment.tempPath = path
+            postFragment.setImageUpdateListener()
+        }else if(result.resultCode==RESULT_CANCELED){
+            Toast.makeText(this,"No se tomó ninguna foto", Toast.LENGTH_SHORT).show()
+        }
+    }
     //----------------------------------------------------------------------------------------------
     override fun onBackPressed() {}
 

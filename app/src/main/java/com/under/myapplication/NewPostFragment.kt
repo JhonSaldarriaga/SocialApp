@@ -42,7 +42,7 @@ class NewPostFragment : Fragment() {
             tempPath = null
         }
 
-        binding.newPostFragmenCamBTN.setOnClickListener {  }
+        binding.newPostFragmenCamBTN.setOnClickListener {newPostListener?.onCameraButtonListener()}
         binding.newPostFragmentAddImageBTN.setOnClickListener {newPostListener?.onImageButtonListener()}
         binding.postBTN.setOnClickListener {  }
 
