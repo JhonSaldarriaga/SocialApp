@@ -2,6 +2,10 @@ package com.under.myapplication.model
 
 import android.util.Log
 import java.io.StringReader
+import java.text.SimpleDateFormat
+import java.util.*
+import kotlin.collections.ArrayList
+import kotlin.collections.HashMap
 
 object DataBase {
     const val NO_USERS:String="NO_USERS"
@@ -60,6 +64,11 @@ object DataBase {
         val p = Post(updateText,location,date,session!!.userID)
         p.updateImagePath = uip
         posts.add(p)
+    }
+
+    //DATE
+    fun getCurrentDateTime(): Date {
+        return Calendar.getInstance().time
     }
 
     //SERI

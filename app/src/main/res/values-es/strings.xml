@@ -17,5 +17,8 @@
     <string name="new_post_add_image_button_camera">CAMARA</string>
     <string name="new_post_post_button">PUBLICAR</string>
     <string name="new_post_select_location">Selecciona tu ubicación:</string>
+    <string name="new_post_empty_update">Texto de la publicación vacío</string>
+    <string name="new_post_success">EXITOSO</string>
+    <string name="no_photo">No se capturo ninguna foto</string>
     <string name="soon">disponible pronto</string>
 </resources>

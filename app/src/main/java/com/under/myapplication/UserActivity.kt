@@ -111,7 +111,7 @@ class UserActivity : AppCompatActivity(),
     }
 
     override fun onPostListener() {
-        TODO("Not yet implemented")
+        serialize()
     }
 
     private fun onGalleryResultNewPost(result: ActivityResult){
@@ -131,7 +131,7 @@ class UserActivity : AppCompatActivity(),
             postFragment.tempPath = path
             postFragment.setImageUpdateListener()
         }else if(result.resultCode==RESULT_CANCELED){
-            Toast.makeText(this,"No se tomó ninguna foto", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this,R.string.no_photo, Toast.LENGTH_SHORT).show()
         }
     }
     //----------------------------------------------------------------------------------------------

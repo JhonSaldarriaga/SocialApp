@@ -49,13 +49,13 @@ class EditProfileFragment : DialogFragment() {
         }
 
         binding.editProfileApplyBTN.setOnClickListener {
-            if (tempPath != null){
-                DataBase.changeProfilePic(tempPath!!)
-            }
             if(binding.editProfileNameET.text.toString()!=""){
+                if (tempPath != null){
+                    DataBase.changeProfilePic(tempPath!!)
+                }
                 DataBase.changeProfileName(binding.editProfileNameET.text.toString())
-            }
-            editProfileListener?.onEditUserValuesApplyListener()
+                editProfileListener?.onEditUserValuesApplyListener()
+            }else
             binding.editProfileNameET.setText("")
             dismiss()
         }

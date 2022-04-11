@@ -33,7 +33,7 @@ class LoginActivity : AppCompatActivity() {
         when(sessionResult){
             DataBase.VALID_USER ->{startActivity(Intent(this, UserActivity::class.java))}
             DataBase.INVALID_USER ->{Toast.makeText(this, R.string.login_invalid, Toast.LENGTH_SHORT).show()}
-            DataBase.NO_USERS ->{Toast.makeText(this, "No hay usuarios registrados", Toast.LENGTH_LONG).show()}
+            DataBase.NO_USERS ->{Toast.makeText(this, R.string.login_invalid, Toast.LENGTH_LONG).show()}
         }
     }
 

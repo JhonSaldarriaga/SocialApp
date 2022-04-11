@@ -17,6 +17,9 @@
     <string name="new_post_add_image_button_camera">CAMERA</string>
     <string name="new_post_post_button">POST</string>
     <string name="new_post_select_location">Select your location:</string>
+    <string name="new_post_empty_update">Publication text empty</string>
+    <string name="new_post_success">SUCCESS</string>
+    <string name="no_photo">No photo</string>
     <string-array name="new_post_spinner_optiones">
         <item>Leticia, Amazonas</item>
         <item>Medellín, Antioquia</item>
