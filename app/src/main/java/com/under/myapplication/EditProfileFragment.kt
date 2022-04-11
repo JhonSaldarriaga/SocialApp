@@ -44,6 +44,7 @@ class EditProfileFragment : DialogFragment() {
         }
 
         binding.editProfileCancelIV.setOnClickListener {
+            binding.editProfileNameET.setText("")
             dismiss()
         }
 
@@ -55,6 +56,7 @@ class EditProfileFragment : DialogFragment() {
                 DataBase.changeProfileName(DataBase.getSession()!!.userID,binding.editProfileNameET.text.toString())
             }
             editProfileListener?.onEditUserValuesApplyListener()
+            binding.editProfileNameET.setText("")
             dismiss()
         }
 
@@ -70,7 +72,6 @@ class EditProfileFragment : DialogFragment() {
             binding.editProfileProfilePicIV.setImageURI(Uri.fromFile(File(profilePic)))
         }else{ binding.editProfileProfilePicIV.setImageResource(R.drawable.default_profile_pic) }
 
-        binding.editProfileNameET.text.clear()
         binding.editProfileNameET.hint = profileName
     }
 
