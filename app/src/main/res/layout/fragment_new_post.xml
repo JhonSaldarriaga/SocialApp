@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".NewPostFragment" >
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -14,131 +14,140 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/newPostFragmentProfilePicIV"
-            style="@style/postProfileImageView"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="ImageContrastCheck"
-            tools:src="@tools:sample/avatars" />
-
-        <TextView
-            android:id="@+id/newPostFragmentProfileNameTV"
-            style="@style/postProfileNameTextView"
-            app:layout_constraintStart_toEndOf="@+id/newPostFragmentProfilePicIV"
-            app:layout_constraintTop_toTopOf="@+id/newPostFragmentProfilePicIV"
-            tools:text="Jhon Alejandro Saldarriga" />
-
-        <Spinner
-            android:id="@+id/spinnerLocality"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="@+id/newPostFragmentProfilePicIV"
-            app:layout_constraintStart_toStartOf="@+id/newPostFragmentProfileNameTV"
-            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
-
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout2"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/newPostFragmentProfilePicIV">
+            app:layout_constraintTop_toTopOf="parent">
 
-            <ImageView
-                android:id="@+id/newPostFragmentCancelImageIV"
-                style="@style/newPostCloseIcon"
-                android:src="@drawable/ic_baseline_close_24"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/newPostFragmentUpdateET" />
-
-            <EditText
-                android:id="@+id/newPostFragmentUpdateET"
-                style="@style/newPostEditText"
-                android:importantForAutofill="no"
-                app:layout_constraintEnd_toEndOf="parent"
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/newPostFragmentProfilePicIV"
+                style="@style/postProfileImageView"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:ignore="TextContrastCheck" />
+                tools:ignore="ImageContrastCheck"
+                tools:src="@tools:sample/avatars" />
 
-            <ImageView
-                android:id="@+id/newPostFragmentPostImageIV"
-                style="@style/newPostAddImageView"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                app:layout_constraintBottom_toBottomOf="parent"
+            <TextView
+                android:id="@+id/newPostFragmentProfileNameTV"
+                style="@style/postProfileNameTextView"
+                app:layout_constraintStart_toEndOf="@+id/newPostFragmentProfilePicIV"
+                app:layout_constraintTop_toTopOf="@+id/newPostFragmentProfilePicIV"
+                tools:text="Jhon Alejandro Saldarriga" />
+
+            <Spinner
+                android:id="@+id/spinnerLocality"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@+id/newPostFragmentProfilePicIV"
+                app:layout_constraintStart_toStartOf="@+id/newPostFragmentProfileNameTV"
+                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/newPostFragmentUpdateET"
-                app:layout_constraintVertical_bias="0.0"
-                tools:srcCompat="@drawable/paisaje_example" />
+                app:layout_constraintTop_toBottomOf="@+id/newPostFragmentProfilePicIV">
+
+                <ImageView
+                    android:id="@+id/newPostFragmentCancelImageIV"
+                    style="@style/newPostCloseIcon"
+                    android:src="@drawable/ic_baseline_close_24"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/newPostFragmentUpdateET" />
+
+                <EditText
+                    android:id="@+id/newPostFragmentUpdateET"
+                    style="@style/newPostEditText"
+                    android:importantForAutofill="no"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="TextContrastCheck" />
+
+                <ImageView
+                    android:id="@+id/newPostFragmentPostImageIV"
+                    style="@style/newPostAddImageView"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/newPostFragmentUpdateET"
+                    app:layout_constraintVertical_bias="0.0"
+                    tools:srcCompat="@drawable/paisaje_example" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView"
+                style="@style/cardViewCustomButton"
+                android:layout_width="wrap_content"
+                android:layout_marginStart="16dp"
+                app:layout_constraintBottom_toBottomOf="@+id/cardView2"
+                app:layout_constraintEnd_toStartOf="@+id/cardView2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/cardView2">
+
+                <ImageView
+                    android:id="@+id/imageView4"
+                    style="@style/leftCustomButtonIcon"
+                    android:src="@drawable/ic_baseline_image_24" />
+
+                <Button
+                    android:id="@+id/newPostFragmentAddImageBTN"
+                    style="@style/rightCustomButton"
+                    android:text="@string/new_post_add_image_button_gallery" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView2"
+                style="@style/cardViewCustomButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/cardView"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
+
+                <ImageView
+                    android:id="@+id/imageButton"
+                    style="@style/leftCustomButtonIcon"
+                    android:src="@drawable/ic_baseline_photo_camera_24"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+                <Button
+                    android:id="@+id/newPostFragmenCamBTN"
+                    style="@style/rightCustomButton"
+                    android:text="@string/new_post_add_image_button_camera" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                style="@style/cardViewCustomButton"
+                android:layout_width="wrap_content"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintBottom_toBottomOf="@+id/cardView2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/cardView2">
+
+                <ImageView
+                    android:id="@+id/imageView5"
+                    style="@style/rightCustomButtonIcon"
+                    android:src="@drawable/ic_baseline_arrow_drop_down_24" />
+
+                <Button
+                    android:id="@+id/postBTN"
+                    style="@style/leftCustomButtonGray"
+                    android:text="@string/new_post_post_button"
+                    tools:ignore="TextContrastCheck" />
+            </androidx.cardview.widget.CardView>
         </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardView"
-            style="@style/cardViewCustomButton"
-            android:layout_width="wrap_content"
-            android:layout_marginStart="16dp"
-            app:layout_constraintBottom_toBottomOf="@+id/cardView2"
-            app:layout_constraintEnd_toStartOf="@+id/cardView2"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/cardView2">
-
-            <ImageView
-                android:id="@+id/imageView4"
-                style="@style/leftCustomButtonIcon"
-                android:src="@drawable/ic_baseline_image_24" />
-
-            <Button
-                android:id="@+id/newPostFragmentAddImageBTN"
-                style="@style/rightCustomButton"
-                android:text="@string/new_post_add_image_button_gallery" />
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardView2"
-            style="@style/cardViewCustomButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/cardView"
-            app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
-
-            <ImageView
-                android:id="@+id/imageButton"
-                style="@style/leftCustomButtonIcon"
-                android:src="@drawable/ic_baseline_photo_camera_24"
-                tools:ignore="SpeakableTextPresentCheck" />
-
-            <Button
-                android:id="@+id/newPostFragmenCamBTN"
-                style="@style/rightCustomButton"
-                android:text="@string/new_post_add_image_button_camera" />
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            style="@style/cardViewCustomButton"
-            android:layout_width="wrap_content"
-            android:layout_marginEnd="16dp"
-            app:layout_constraintBottom_toBottomOf="@+id/cardView2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/cardView2">
-
-            <ImageView
-                android:id="@+id/imageView5"
-                style="@style/rightCustomButtonIcon"
-                android:src="@drawable/ic_baseline_arrow_drop_down_24" />
-
-            <Button
-                android:id="@+id/postBTN"
-                style="@style/leftCustomButtonGray"
-                android:text="@string/new_post_post_button"
-                tools:ignore="TextContrastCheck" />
-        </androidx.cardview.widget.CardView>
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

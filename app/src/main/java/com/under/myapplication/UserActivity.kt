@@ -16,7 +16,8 @@ import java.io.File
 
 class UserActivity : AppCompatActivity(),
     ProfileFragment.ProfileListener,
-    EditProfileFragment.EditProfileListener{
+    EditProfileFragment.EditProfileListener,
+    NewPostFragment.NewPostListener{
 
     private val binding: ActivityUserBinding by lazy { ActivityUserBinding.inflate(layoutInflater) }
 
@@ -26,12 +27,14 @@ class UserActivity : AppCompatActivity(),
     private var dialogEditProfile = EditProfileFragment()
 
     private val galleryLauncherTemp = registerForActivityResult(StartActivityForResult(),::onGalleryTempResult)
+    private val galleryLauncherNewPost = registerForActivityResult(StartActivityForResult(),::onGalleryResultNewPost)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
         postFragment = NewPostFragment.newInstance()
+        postFragment.newPostListener = this
         homeFragment = HomeFragment.newInstance()
         profileFragment = ProfileFragment.newInstance()
         profileFragment.profileListener = this
@@ -54,7 +57,7 @@ class UserActivity : AppCompatActivity(),
         transaction.commit()
     }
 
-    //METODOS DE INTERFACES
+    //profileListener
     override fun onLogoutListener() {
         DataBase.endSession()
         startActivity(Intent(this, LoginActivity::class.java))
@@ -64,10 +67,17 @@ class UserActivity : AppCompatActivity(),
         dialogEditProfile.show(supportFragmentManager,"editProfile")
     }
 
+
+    //editProfileListener
     override fun onChangeProfilePicListener() {
         val intent = Intent(Intent.ACTION_GET_CONTENT)
         intent.type= "image/*"
         galleryLauncherTemp.launch(intent)
+    }
+
+    override fun onEditUserValuesApplyListener() {
+        serialize()
+        profileFragment.updateInfo()
     }
 
     private fun onGalleryTempResult(result: ActivityResult){
@@ -79,11 +89,31 @@ class UserActivity : AppCompatActivity(),
             dialogEditProfile.onImageCharge()
         }
     }
-
-    override fun onEditUserValuesApplyListener() {
-        serialize()
-        profileFragment.updateInfo()
+    //newPostListener
+    override fun onImageButtonListener() {
+        val intent = Intent(Intent.ACTION_GET_CONTENT)
+        intent.type= "image/*"
+        galleryLauncherNewPost.launch(intent)
     }
+
+    override fun onCameraButtonListener() {
+        TODO("Not yet implemented")
+    }
+
+    override fun onPostListener() {
+        TODO("Not yet implemented")
+    }
+
+    private fun onGalleryResultNewPost(result: ActivityResult){
+        if(result.resultCode==RESULT_OK){
+            val uriImage = result.data?.data
+            Log.e(">>>","${uriImage}")
+            Log.e(">>>","${UtilDomi.getPath(this,uriImage!!)!!.toString()}")
+            postFragment.tempPath = UtilDomi.getPath(this,uriImage!!)!!.toString()
+            postFragment.setImageUpdateListener()
+        }
+    }
+
     //----------------------------------------------------------------------------------------------
     override fun onBackPressed() {}
 
@@ -110,4 +140,5 @@ class UserActivity : AppCompatActivity(),
         val sharedPref = getSharedPreferences("Preference",Context.MODE_PRIVATE)
         sharedPref.edit().putString("state",json).apply()
     }
+
 }
