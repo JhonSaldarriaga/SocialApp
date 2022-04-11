@@ -31,10 +31,9 @@
 
         <Spinner
             android:id="@+id/spinnerLocality"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="@+id/newPostFragmentProfilePicIV"
-            app:layout_constraintEnd_toEndOf="@+id/newPostFragmentProfileNameTV"
             app:layout_constraintStart_toStartOf="@+id/newPostFragmentProfileNameTV"
             tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 

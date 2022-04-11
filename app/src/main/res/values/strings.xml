@@ -17,5 +17,40 @@
     <string name="new_post_add_image_button_camera">CAMERA</string>
     <string name="new_post_post_button">POST</string>
     <string name="new_post_select_location">Select your location:</string>
+    <string-array name="new_post_spinner_optiones">
+        <item>Leticia, Amazonas</item>
+        <item>Medellín, Antioquia</item>
+        <item>Arauca, Arauca</item>
+        <item>Barranquilla, Atlántico</item>
+        <item>Bogotá, Bogotá</item>
+        <item>Cartagena de Indias, Bolívar</item>
+        <item>Tunja, Boyacá</item>
+        <item>Manizales, Caldas</item>
+        <item>Florencia, Caquetá</item>
+        <item>Yopal, Casanare</item>
+        <item>Popayán, Cauca</item>
+        <item>Valledupar, Cesar</item>
+        <item>Quibdó, Chocó</item>
+        <item>Montería, Córdoba</item>
+        <item>Bogotá, Cundinamarca</item>
+        <item>Inírida, Guainía</item>
+        <item>San José del Guaviare, Guaviare</item>
+        <item>Neiva, Huila</item>
+        <item>Riohacha, La Guajira</item>
+        <item>Santa Marta, Magdalena</item>
+        <item>Villavicencio, Meta</item>
+        <item>Pasto, Nariño</item>
+        <item>San José de Cúcuta, Norte de Santander</item>
+        <item>Mocoa, Putumayo</item>
+        <item>Armenia, Quindío</item>
+        <item>Pereira, Risaralda</item>
+        <item>San Andrés, San Andrés y Providencia</item>
+        <item>Bucaramanga, Santander</item>
+        <item>Sincelejo, Sucre</item>
+        <item>Ibagué, Tolima</item>
+        <item>Cali, Valle del Cauca</item>
+        <item>Mitú, Vaupés</item>
+        <item>Puerto Carreño, Vichada</item>
+    </string-array>
     <string name="soon">available soon</string>
 </resources>
