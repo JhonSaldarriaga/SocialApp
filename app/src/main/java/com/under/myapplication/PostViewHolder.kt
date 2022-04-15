@@ -13,6 +13,7 @@ class PostViewHolder(itemView: View):RecyclerView.ViewHolder(itemView) {
     var updateText: TextView = itemView.findViewById(R.id.postTextView)
     var profilePic: de.hdodenhof.circleimageview.CircleImageView = itemView.findViewById(R.id.postRowProfilePic)
     var updateImage: ImageView = itemView.findViewById(R.id.postRowImage)
+    var separator: View  = itemView.findViewById(R.id.separator)
 
     init {
 

@@ -1,13 +1,10 @@
 package com.under.myapplication
 
-import android.graphics.BitmapFactory
 import android.net.Uri
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.view.isGone
-import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
 import com.under.myapplication.model.DataBase
 import java.io.File
@@ -35,6 +32,9 @@ class PostAdapter: RecyclerView.Adapter<PostViewHolder>() {
             holder.updateImage.setImageURI(Uri.fromFile(File(postN.updateImagePath)))
         }else{
             holder.updateImage.visibility = View.GONE
+        }
+        if(position == itemCount - 1){
+            holder.separator.visibility = View.GONE
         }
     }
 
